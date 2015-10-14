@@ -1,0 +1,48 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" 
+          "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:ui="http://java.sun.com/jsf/facelets"
+	xmlns:h="http://java.sun.com/jsf/html"
+	xmlns:f="http://java.sun.com/jsf/core">
+<head>
+<title>Novo Medicamento</title>
+</head>
+
+<h:body>
+
+	<div id="content">
+		<h1>
+			Medicamentos <small>Novo Medicamento</small>
+		</h1>
+		<h:form>
+			<h:panelGroup rendered="#{not empty userMB.user.id}">
+				<div>
+					<h:outputLabel value="Código: " />
+					<h:inputText readonly="true" value="#{userMB.user.id}" />
+				</div>
+			</h:panelGroup>
+			<h:inputHidden value="#{userMB.user.id}" />
+			<div>
+				<h:outputLabel value="Nome do medicamento: " />
+				<h:inputText value="#{userMB.user.nome}" />
+			</div>
+			<div>
+				<h:outputLabel value="Dosagem: " />
+				<h:inputText value="#{userMB.user.dosagem}" />
+			</div>
+			<div>
+				<h:outputLabel value="Intervalo: " />
+				<h:inputText value="#{userMB.user.intervalo}" />
+			</div>
+			<div>
+				<h:outputLabel value="Duracao: " />
+				<h:inputText value="#{userMB.user.duracao}" />
+			</div>
+			<button type="reset">Restaurar</button>
+			<h:commandButton value="Salvar" action="#{userMB.salvar()}" />
+		</h:form>
+	</div>
+
+</h:body>
+
+</html>
