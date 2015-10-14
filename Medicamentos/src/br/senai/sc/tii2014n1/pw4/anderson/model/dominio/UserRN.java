@@ -33,7 +33,7 @@ public class UserRN {
 		return Dao.listarTodos();
 	}
 	
-	public User buscarPorId(Long id) throws Exception{
+	public User buscarPorId(int id) throws Exception{
 		return Dao.buscarPorId(id);
 	}
 	

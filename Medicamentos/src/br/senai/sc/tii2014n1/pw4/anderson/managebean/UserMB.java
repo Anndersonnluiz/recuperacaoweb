@@ -66,7 +66,7 @@ public class UserMB {
 	}
 	
 	public String editar(String idParam) throws Exception{
-		Long id = Long.parseLong(idParam);
+		int id = Integer.parseInt(idParam);
 		user = userRN.buscarPorId(id);
 		return "userform";
 	}

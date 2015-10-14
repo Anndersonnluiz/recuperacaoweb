@@ -26,7 +26,7 @@ public class UserDao extends Dao {
 			ps.setString(2, user.getDosagem());
 			ps.setString(3, user.getIntervalo());
 			ps.setString(4, user.getDuracao());
-			ps.setLong(5, user.getId());
+			ps.setInt(5, user.getId());
 			ps.executeUpdate();
 		} catch (Exception e) {
 			System.out.println("Erro ao executar o editar: " + e);
@@ -66,7 +66,7 @@ public class UserDao extends Dao {
 				user.setDosagem(rs.getString("dosagem"));
 				user.setIntervalo(rs.getString("intervalo"));
 				user.setDuracao (rs.getString("duracao"));
-				user.setId(rs.getLong("id"));
+				user.setId(rs.getInt("id"));
 				users.add(user);
 			}
 		} catch (Exception e) {
@@ -76,7 +76,7 @@ public class UserDao extends Dao {
 		return users;
 	}
 	
-	public User buscarPorId(Long id){
+	public User buscarPorId(int id){
 		try {
 			PreparedStatement ps;
 			ps =  getConnection().prepareStatement(SELECT_ID);
@@ -89,7 +89,7 @@ public class UserDao extends Dao {
 				user.setDosagem(rs.getString("dosagem"));
 				user.setIntervalo(rs.getString("intervalo"));
 				user.setDuracao(rs.getString("duracao"));
-				user.setId(rs.getLong("id"));
+				user.setId(rs.getInt("id"));
 				return user;
 			}
 		} catch (Exception e) {

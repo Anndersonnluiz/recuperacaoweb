@@ -2,13 +2,13 @@ package br.senai.sc.tii2014n1.pw4.anderson.model.dominio;
 
 public class User {
 	
-	private long id;
+	private int id;
 	private String nome;
 	private String dosagem;
 	private String intervalo;
 	private String duracao;
 	
-	public User(long id, String nome, String dosagem, String intervalo,
+	public User(int id, String nome, String dosagem, String intervalo,
 			String duracao) {
 		super();
 		this.id = id;
@@ -26,10 +26,10 @@ public class User {
 	
 	
 	
-	public long getId() {
+	public int getId() {
 		return id;
 	}
-	public void setId(long id) {
+	public void setId(int id) {
 		this.id = id;
 	}
 	public String getNome() {

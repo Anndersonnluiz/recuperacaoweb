@@ -17,29 +17,29 @@
 			<h:dataTable value="#{UserMB.usuarios}" var="user" >
 				<h:column>
 					<f:facet name="header">ID</f:facet>
-					<h:outputText value="#{user.id}" />
+					<h:outputText value="#{User.id}" />
 				</h:column>
 				<h:column>
 					<f:facet name="header">Nome do medicamento</f:facet>
-					<h:outputText value="#{user.nome}" />
+					<h:outputText value="#{User.nome}" />
 				</h:column>
 				<h:column>
 					<f:facet name="header">Dosagem</f:facet>
-					<h:outputText value="#{user.dosagem}" />
+					<h:outputText value="#{User.dosagem}" />
 				</h:column>
 				<h:column>
 					<f:facet name="header">Intervalo</f:facet>
-					<h:outputText value="#{user.intervalo}" />
+					<h:outputText value="#{User.intervalo}" />
 				</h:column>
 				<h:column>
 					<f:facet name="header">Duracao</f:facet>
-					<h:outputText value="#{user.duracao}" />
+					<h:outputText value="#{User.duracao}" />
 				</h:column>
 				<h:column>
 					<f:facet name="header"></f:facet>
-					<h:commandLink value="Editar" action="#{userMB.editar(user.id)}" />
+					<h:commandLink value="Editar" action="#{UserMB.editar(user.id)}" />
 					&nbsp;&nbsp;&nbsp;
-					<h:commandLink value="X" action="#{userMB.excluir(user.id)}"
+					<h:commandLink value="X" action="#{UserMB.excluir(user.id)}"
 					 onclick="return confirm('Tem certeza que deseja excluir usuário &#34;#{user.nome}&#34;?')" />
 				</h:column>
 			</h:dataTable>
