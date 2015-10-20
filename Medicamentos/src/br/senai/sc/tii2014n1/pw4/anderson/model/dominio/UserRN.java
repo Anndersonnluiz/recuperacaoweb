@@ -33,11 +33,11 @@ public class UserRN {
 		return Dao.listarTodos();
 	}
 	
-	public User buscarPorId(int id) throws Exception{
+	public User buscarPorId(int id) {
 		return Dao.buscarPorId(id);
 	}
 	
-	public void excluir(User user) throws Exception{
-		Dao.excluir(user);
+	public void excluir(Integer id) throws Exception{
+		Dao.excluir(id);
 	}
 }

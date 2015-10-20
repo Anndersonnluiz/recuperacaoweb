@@ -3,8 +3,10 @@ package br.senai.sc.tii2014n1.pw4.anderson.dao;
 import java.sql.ResultSet;
 import java.util.ArrayList;
 import java.util.List;
-
 import java.sql.PreparedStatement;
+
+
+
 
 import br.senai.sc.tii2014n1.pw4.anderson.model.dominio.User;
 
@@ -15,10 +17,17 @@ public class UserDao extends Dao {
 	private final String UPDATE = "UPDATE user SET nome = ?, dosagem = ?, intervalo = ?, duracao = ? WHERE id = ?";
 	private final String SELECT = "SELECT * FROM user";
 	private final String SELECT_ID = "SELECT * FROM user WHERE id = ?";
-	private final String DELETE = "DELETE FROM avaliacao1 WHERE id = ?";
+	private final String DELETE = "DELETE FROM user WHERE id = ?";
 	
+	public void salvar(User user) throws Exception {
+		if (user.getId() == 0) {
+			inserir(user);
+		} else {
+			alterar(user);
+		}
+	} 
 	
-	public void editar(User user) {
+	public void alterar(User user) {
 		try {
 			PreparedStatement ps;
 			ps =  getConnection().prepareStatement(UPDATE);
@@ -36,8 +45,10 @@ public class UserDao extends Dao {
 		}
 		
 	}
+	
+	
 
-	public void salvar(User user) {
+	public void inserir(User user) {
 		try {
 			PreparedStatement ps;
 			ps =   getConnection().prepareStatement(INSERT);
@@ -80,7 +91,7 @@ public class UserDao extends Dao {
 		try {
 			PreparedStatement ps;
 			ps =  getConnection().prepareStatement(SELECT_ID);
-			ps.setLong(1, id);
+			ps.setInt(1, id);
 			ResultSet rs;
 			rs = ps.executeQuery();
 			while (rs.next()) {
@@ -99,11 +110,12 @@ public class UserDao extends Dao {
 		return null;
 	}
 	
-	public void excluir(User user){
+	public void excluir(Integer id) throws Exception{
 		try {
 			PreparedStatement ps = null;
 			ps =  getConnection().prepareStatement(DELETE);
-			ps.setLong(1, user.getId());
+			ps.setInt(1, id);
+			ps.executeUpdate();
 		} catch (Exception e) {
 			System.out.println("Erro ao executar o excluir: "+ e);
 			e.printStackTrace();

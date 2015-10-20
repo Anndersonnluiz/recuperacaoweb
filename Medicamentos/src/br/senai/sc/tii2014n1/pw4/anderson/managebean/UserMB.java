@@ -55,9 +55,10 @@ public class UserMB {
 	}
 
 	
-	public String excluir(){
+	public String excluir(String idParam){
+		Integer id = Integer.parseInt(idParam);
 		try {
-			userRN.excluir(user);
+			userRN.excluir(id);
 			usuarios = null;
 		} catch (Exception e) {
 			e.printStackTrace();
@@ -65,7 +66,7 @@ public class UserMB {
 		return"";
 	}
 	
-	public String editar(String idParam) throws Exception{
+	public String editar(String idParam) {
 		int id = Integer.parseInt(idParam);
 		user = userRN.buscarPorId(id);
 		return "userform";

@@ -4,11 +4,8 @@
 	xmlns:ui="http://java.sun.com/jsf/facelets"
 	xmlns:h="http://java.sun.com/jsf/html"
 	xmlns:f="http://java.sun.com/jsf/core">
-<head>
-<title>Novo Medicamento</title>
-</head>
-
-<h:body>
+<ui:composition template="/WEB-INF/template/padrao.xhtml">
+	<ui:define name="conteudo">
 
 	<div id="content">
 		<h1>
@@ -43,6 +40,7 @@
 		</h:form>
 	</div>
 
-</h:body>
+	</ui:define>
+</ui:composition>
 
 </html>
