@@ -35,11 +35,15 @@
 				<h:outputLabel value="Duracao: " />
 				<h:inputText value="#{userMB.user.duracao}" />
 			</div>
+			<div>
+				<h:outputLabel value="Senha: " />
+				<h:inputText value="#{userMB.user.senha}" />
+			</div>
 			<button type="reset">Restaurar</button>
 			<h:commandButton value="Salvar" action="#{userMB.salvar()}" />
 		</h:form>
 	</div>
-
+	
 	</ui:define>
 </ui:composition>
 

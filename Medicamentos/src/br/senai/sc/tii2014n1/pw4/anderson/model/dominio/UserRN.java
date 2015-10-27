@@ -40,4 +40,8 @@ public class UserRN {
 	public void excluir(Integer id) throws Exception{
 		Dao.excluir(id);
 	}
+
+	public User buscaPorNome(String nome) {
+		return Dao.buscarPorNome(nome);
+	}
 }

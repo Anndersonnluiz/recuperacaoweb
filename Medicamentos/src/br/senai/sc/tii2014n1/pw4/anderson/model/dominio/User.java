@@ -7,15 +7,17 @@ public class User {
 	private String dosagem;
 	private String intervalo;
 	private String duracao;
+	private String senha;
 	
 	public User(int id, String nome, String dosagem, String intervalo,
-			String duracao) {
+			String duracao, String senha) {
 		super();
 		this.id = id;
 		this.nome = nome;
 		this.dosagem = dosagem;
 		this.intervalo = intervalo;
 		this.duracao = duracao;
+		this.senha = senha;
 	}
 
 
@@ -26,6 +28,18 @@ public class User {
 	
 	
 	
+	public String getSenha() {
+		return senha;
+	}
+
+
+
+	public void setSenha(String senha) {
+		this.senha = senha;
+	}
+
+
+
 	public int getId() {
 		return id;
 	}

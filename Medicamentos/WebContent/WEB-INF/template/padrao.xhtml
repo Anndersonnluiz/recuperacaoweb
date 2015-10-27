@@ -60,8 +60,16 @@
 	<div class="container">
 		<div class="banner"></div>
 		<div class="menu">
-			<h:link outcome="index">Inicio</h:link>
-			<h:link outcome="userlist">Medicamentos</h:link>
+			<h:link outcome="/index">Inicio</h:link>
+			<h:link outcome="/admin/userlist">Medicamentos</h:link>
+			
+			<h:panelGroup rendered="#{sessaoMB.estaLogado()}">
+				<span style="float: right;">
+					<h:form>
+						<h:commandButton action="#{sessaoMB.sair()}">Sair</h:commandButton>
+					</h:form>
+				</span>
+			</h:panelGroup>	
 		</div>
 		<div class="conteudo">
 			<ui:insert name="conteudo">
